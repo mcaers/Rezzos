@@ -1,9 +1,22 @@
 Rezzos::Application.routes.draw do
-  get "users/new"
 
-  get "users/create"
+  get "reservations/index"
 
+  get "reservations/new"
+
+  get "reservations/create"
+
+  get "reservations/update"
+
+  get "reservations/destroy"
+
+  get "reservations/show"
+
+resources :categories
 resources :restaurant
+resources :user do
+  resources :restaurants
+end
 
 
   # The priority is based upon order of creation:
