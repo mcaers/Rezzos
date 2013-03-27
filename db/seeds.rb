@@ -23,8 +23,7 @@ restaurant_opts = [
 	{:name => "Namaste",	:categories=> ["Indian"]} 
 	]
 	restaurant_opts.each do |opts|
-	# r=restaurant.create! :name => opts[:name]
-	restaurant = Restaurant.create! opts.slice(:name) # => {:name => "Union"}
+	restaurant = Restaurant.create! opts.slice(:name) 
 	opts[:categories].each do |name|
 		category = Category.where(:name => name).first_or_create
 		restaurant.categories << category
