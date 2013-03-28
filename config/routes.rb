@@ -1,22 +1,17 @@
 Rezzos::Application.routes.draw do
 
-  get "reservations/index"
+  root :to => 'home#index'
 
-  get "reservations/new"
+  resources :categories
+  resources :restaurants do
+    resources :timeslots
+  end
 
-  get "reservations/create"
+  resources :users do
+    resources :restaurants
+  end
 
-  get "reservations/update"
 
-  get "reservations/destroy"
-
-  get "reservations/show"
-
-resources :categories
-resources :restaurant
-resources :user do
-  resources :restaurants
-end
 
 
   # The priority is based upon order of creation:

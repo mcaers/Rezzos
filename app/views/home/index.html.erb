@@ -1,2 +1,6 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<h1>Welcome to Rezzos</h1>
+
+Restaurant Category:
+<% @categories = Category.all %>
+ 
+<%= collection_select(:name, :category_id, @categories, :id, :name, {:prompt => true}) %>
