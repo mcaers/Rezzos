@@ -1,6 +1,17 @@
 <h1>Welcome to Rezzos</h1>
 
-Restaurant Category:
+<p>Restaurant Category:</p>
+
 <% @categories = Category.all %>
  
-<%= collection_select(:name, :category_id, @categories, :id, :name, {:prompt => true}) %>
+
+<!-- <p> Select Date and Time: </p> -->
+ <!-- datetime_select :restaurants, :time %>  -->
+ 
+ <!-- use form tag with method get submitting to restaurants path -->
+
+
+<%= form_tag ('/restaurants'), :method => "get" do |f| %>
+    <%= collection_select(:category, :id, @categories, :id, :name, {:prompt => true}) %> 
+    <div><%= submit_tag 'Save' %></div>
+<% end %>

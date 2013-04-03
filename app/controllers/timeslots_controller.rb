@@ -8,5 +8,7 @@ def show
 	@timeslot = Timeslot.find(params[:id])
 end
 
+def create
+	select_tag select_options(@DateTime)
 
 end
